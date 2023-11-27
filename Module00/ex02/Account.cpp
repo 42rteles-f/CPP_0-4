@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:48:17 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/11/27 17:35:01 by rteles-f         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:39:25 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	Account::makeDeposit(int deposit)
 
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits++;
-	
+
 	this->_amount += deposit;
 	this->_nbDeposits++;
 }
