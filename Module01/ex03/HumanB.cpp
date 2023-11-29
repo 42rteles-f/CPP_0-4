@@ -6,26 +6,29 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 20:36:33 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/05/12 21:33:41 by rteles-f         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:36:48 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB()
-{}
-
-HumanB::~HumanB()
-{}
-
 HumanB::HumanB(std::string name):
 name(name), weapon(NULL)
-{}
+{
+	std::cout << "HumanB Constructor Called. Name: " << this->name << std::endl;
+}
+
+HumanB::~HumanB()
+{
+	std::cout << "HumanB Destructor Called. Name: " << this->name << std::endl;
+}
 
 void	HumanB::setWeapon(Weapon& weapon){
 	this->weapon = &weapon;
 }
 
 void	HumanB::attack(void){
-	std::cout << this->name << " attacks with their " << weapon->getType() << std::endl;
+	std::string hold = this->weapon ? weapon->getType() : "these hands";
+
+	std::cout << this->name << " attacks with " << hold << std::endl;
 }
