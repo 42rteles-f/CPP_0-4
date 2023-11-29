@@ -16,9 +16,9 @@
 # include <iostream>
 
 class Zombie {
+
 	private:
-	std::string	name;
-	int			del;
+		std::string	name;
 
 	public:
 		Zombie();
@@ -27,6 +27,6 @@ class Zombie {
 		void	announce(void);
 } ;
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

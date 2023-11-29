@@ -14,8 +14,8 @@
 
 using namespace std;
 
-Zombie::Zombie(void)
-{
+Zombie::Zombie(void): name("") {
+	std::cout << "Zombie Constructor Called." << std::endl;
 }
 
 Zombie::~Zombie(void) {
