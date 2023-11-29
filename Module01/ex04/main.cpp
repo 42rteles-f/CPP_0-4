@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 21:43:18 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/11/21 11:38:14 by rteles-f         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:56:36 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	write_replace(std::ifstream& in, std::ofstream& out, std::string s1, std::s
 			line.insert(found, s2);
 			found += s2.length();
 		}
-		if (!in.eof()) { line += '\n' };
+		if (!in.eof()) { line += '\n'; };
 		out.write(line.c_str(), line.length());
 	}
 }
