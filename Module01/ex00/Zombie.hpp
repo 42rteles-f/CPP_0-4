@@ -16,9 +16,9 @@
 # include <iostream>
 
 class Zombie {
+
 	private:
-	std::string	name;
-	int			del;
+		std::string	name;
 
 	public:
 		Zombie();
