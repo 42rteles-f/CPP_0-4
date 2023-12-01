@@ -20,7 +20,7 @@ RM			= 	rm -f
 
 INCLUDES	= 	-I
 
-SRCS		=	Harl.cpp
+SRCS		=	main.cpp Harl.cpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 

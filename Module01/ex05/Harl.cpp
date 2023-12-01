@@ -52,12 +52,3 @@ years whereas you started working here since last month." << std::endl;
 void	Harl::error(void){
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-
-int	main(void)
-{
-	Harl	test2;
-
-	test2.complain("IFO");
-	test2.complain("INFO");
-	return (0);
-}
