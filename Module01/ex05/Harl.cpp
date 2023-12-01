@@ -12,37 +12,38 @@
 
 #include "Harl.hpp"
 
-Harl::Harl() :
-	functions({
-		{"DEBUG", &Harl::debug},
-		{"INFO", &Harl::info},
-		{"WARNING", &Harl::warning},
-		{"ERROR", &Harl::error}
-	})
+Harl::Harl():
+functions{NULL, &Harl::warning, &Harl::info, &Harl::debug, &Harl::error}
 {}
 
+Harl::~Harl() {}
+
+	// for (int i = 1; cases[i] && level != cases[i]; i++)
+	// 	;
 void	Harl::complain(std::string level)
 {
-	if (functions.find(level) == functions.end())
-	{
+	int	valid = (level == "WARNING") * 1 || (level == "INFO") * 2
+		|| (level == "DEBUG") * 3 || (level == "ERROR") * 4;
+
+	if (valid)
+		(this->*functions[valid])();
+	else
 		std::cout << "Not a Valid Level." << std::endl;
-		return ;
-	}
-	functions[level]();
 }
 
 void	Harl::debug(void){
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup \
+burger. I really do!" << std::endl;
 }
 
 void	Harl::info(void){
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put \
-		enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
 void	Harl::warning(void){
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for \
-		years whereas you started working here since last month." << std::endl;
+years whereas you started working here since last month." << std::endl;
 }
 
 void	Harl::error(void){
@@ -51,10 +52,8 @@ void	Harl::error(void){
 
 int	main(void)
 {
-	int	*array;
+	Harl	test2;
 
-	while (string[i])
-		if (array[string[i]])
-			array = array[i];
+	test2.complain("IFO");
 	return (0);
 }

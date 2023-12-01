@@ -18,11 +18,11 @@
 
 class Harl {
 	private:
-		static void debug(void);
-		static void info(void);
-		static void warning(void);
-		static void error(void);
-		std::map<std::string, void(*)(void)> functions;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+		void	(Harl::*functions[5])(void);
 
 	public:
 		Harl();
