@@ -16,13 +16,16 @@
 # include <iostream>
 # include <map>
 
+# define HARLS_CASES 4
+
 class Harl {
 	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
-		void	(Harl::*functions[5])(void);
+		void		debug(void);
+		void		info(void);
+		void		warning(void);
+		void		error(void);
+		void		(Harl::*functions[HARLS_CASES + 2])(void);
+		const char	*cases[HARLS_CASES + 2];
 
 	public:
 		Harl();

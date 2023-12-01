@@ -13,18 +13,22 @@
 #include "Harl.hpp"
 
 Harl::Harl():
-functions{NULL, &Harl::warning, &Harl::info, &Harl::debug, &Harl::error}
+functions{NULL, &Harl::warning, &Harl::info, &Harl::debug, &Harl::error, NULL},
+cases{NULL, "WARNING", "INFO", "DEBUG", "ERROR", NULL}
 {}
 
 Harl::~Harl() {}
 
 	// for (int i = 1; cases[i] && level != cases[i]; i++)
 	// 	;
+	// int	valid = (level == "WARNING") * 1 || (level == "INFO") * 2
+	// 	|| (level == "DEBUG") * 3 || (level == "ERROR") * 4;
 void	Harl::complain(std::string level)
 {
-	int	valid = (level == "WARNING") * 1 || (level == "INFO") * 2
-		|| (level == "DEBUG") * 3 || (level == "ERROR") * 4;
+	int	valid = HARLS_CASES;
 
+	while (valid && level != cases[valid])
+		valid--;
 	if (valid)
 		(this->*functions[valid])();
 	else
@@ -54,6 +58,6 @@ int	main(void)
 {
 	Harl	test2;
 
-	test2.complain("IFO");
+	test2.complain("INFO");
 	return (0);
 }
