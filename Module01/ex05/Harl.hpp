@@ -16,7 +16,7 @@
 # include <iostream>
 # include <map>
 
-# define HARLS_CASES 4
+# define HARLS_CASES 5
 
 class Harl {
 	private:
@@ -24,8 +24,9 @@ class Harl {
 		void		info(void);
 		void		warning(void);
 		void		error(void);
-		void		(Harl::*functions[HARLS_CASES + 2])(void);
-		const char	*cases[HARLS_CASES + 2];
+		void 		invalidLevel(void);
+		void		(Harl::*functions[HARLS_CASES])(void);
+		const char	*cases[HARLS_CASES];
 
 	public:
 		Harl();
