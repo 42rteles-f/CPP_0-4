@@ -6,7 +6,7 @@
 #    By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 20:08:19 by rteles-f          #+#    #+#              #
-#    Updated: 2023/11/27 17:53:40 by rteles-f         ###   ########.fr        #
+#    Updated: 2023/12/04 14:44:01 by rteles-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean:
 fclean: 	clean
 				@$(RM) $(NAME)
 
-re:			all
+re:			fclean all
 
 norm :
 			@norminette -R CheckForbiddenSourceHeader $(SRCS) headers/
