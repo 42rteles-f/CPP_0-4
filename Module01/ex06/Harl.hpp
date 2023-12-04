@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:56:38 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/05/15 17:58:08 by rteles-f         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:29:03 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Harl {
 		void		warning(void);
 		void		error(void);
 		void 		invalidLevel(void);
-		void		(Harl::*functions[HARLS_CASES])(void);
 		const char	*cases[HARLS_CASES];
 
 	public:
