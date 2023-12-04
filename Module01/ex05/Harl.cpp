@@ -15,14 +15,13 @@
 Harl::Harl():
 functions{&Harl::warning, &Harl::info, &Harl::debug, &Harl::error, &Harl::invalidLevel},
 cases{"WARNING", "INFO", "DEBUG", "ERROR", NULL}
-{}
+{ std::cout << "Harl Constructor Called." << std::endl; }
 
-Harl::~Harl() {}
+Harl::~Harl()
+{ std::cout << "Harl Destructor Called." << std::endl; }
 
-void	Harl::invalidLevel(void) {
-
-	std::cout << "Not a Valid Level." << std::endl;
-}
+void	Harl::invalidLevel(void)
+{ std::cout << "Not a Valid Level." << std::endl; }
 
 
 void	Harl::complain(std::string level)
