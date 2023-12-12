@@ -12,27 +12,36 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(): fixed(0) {
-	std::cout << "Default Constructor Called." << std::endl;
+Fixed::Fixed(): fixed(0)
+{ std::cout << "Fixed Default Constructor Called." << std::endl; }
+
+Fixed::Fixed(const Fixed& tocopy): fixed(0) {
+	std::cout << "Fixed Copy Constructor Called." << std::endl;
+	*this = tocopy;
 }
 
-Fixed::~Fixed() {
-	std::cout << "Destructor Called." << std::endl;
-}
+Fixed::Fixed(const int n): fixed(n << fractional)
+{ std::cout << "Fixed Int Constructor Called." << std::endl; }
 
-Fixed &Fixed::operator= (const Fixed &obj) {
-    std::cout << "Copy Assignment Operator Called." << std::endl;
-	this->fixed = obj.getRawBits();
+Fixed::Fixed(const float n): fixed(std::roundf(n * (1 << fractional)))
+{ std::cout << "Fixed Float Constructor Called." << std::endl; }
+
+Fixed::~Fixed()
+{ std::cout << "Fixed Destructor Called." << std::endl; }
+
+Fixed& Fixed::operator=(const Fixed &tocopy) {
+
+    std::cout << "Fixed Copy Assignment Operator Called." << std::endl;
+	if (this == &tocopy) return (*this);
+
+	this->fixed = tocopy.getRawBits();
 
 	return (*this);
 }
 
-Fixed::Fixed(const int n): fixed(n << fractional) {
-    std::cout << "Int Constructor Called." << std::endl;
-}
-
-Fixed::Fixed(const float n): fixed(std::roundf(n * (1 << fractional))) {
-    std::cout << "Float Constructor Called." << std::endl;
+std::ostream& operator<<(std::ostream& stream, const Fixed& obj) {
+    stream << obj.toFloat();
+    return (stream);
 }
 
 int	Fixed::getRawBits(void) const{
@@ -43,20 +52,10 @@ void Fixed::setRawBits(int const raw) {
 	this->fixed = raw;
 }
 
-Fixed::Fixed(const Fixed &obj) {
-    std::cout << "Copy constructor called" << std::endl;
-    *this = obj;
-}
-
 float	Fixed::toFloat(void) const {
-    return (static_cast<float>(this->getRawBits()) / (1 << fractional));
+    return ((float)this->getRawBits() / (1 << fractional));
 }
 
 int	Fixed::toInt(void) const {
-    return this->fixed >> fractional;
-}
-
-std::ostream& operator<<(std::ostream& stream, const Fixed& obj) {
-    stream << obj.toFloat();
-    return stream;
+    return (this->fixed >> fractional);
 }
