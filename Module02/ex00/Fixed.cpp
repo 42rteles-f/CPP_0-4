@@ -12,22 +12,30 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(): fixed(0) {
-	std::cout << "Default Constructor Called." << std::endl;
+Fixed::Fixed(): fixed(0)
+{ std::cout << "Fixed Default Constructor Called." << std::endl; }
+
+Fixed::Fixed(const Fixed& tocopy): fixed(0) {
+	std::cout << "Fixed Copy Constructor Called." << std::endl;
+	*this = tocopy;
 }
 
-Fixed::~Fixed() {
-	std::cout << "Destructor Called." << std::endl;
-}
+Fixed::~Fixed()
+{ std::cout << "Fixed Destructor Called." << std::endl; }
 
-Fixed &Fixed::operator= (const Fixed &obj){
-    std::cout << "Copy Assignment Operator Called." << std::endl;
-	this->fixed = obj.getRawBits();
+Fixed& Fixed::operator=(const Fixed &tocopy) {
+
+    std::cout << "Fixed Copy Assignment Operator Called." << std::endl;
+	if (this == &tocopy) return (*this);
+
+	this->fixed = tocopy.getRawBits();
 
 	return (*this);
 }
 
 int	Fixed::getRawBits(void) const{
+
+    std::cout << "Fixed getRawBits member function called." << std::endl;
 	return (this->fixed);
 }
 
