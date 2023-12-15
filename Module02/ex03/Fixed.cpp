@@ -110,6 +110,8 @@ Fixed	Fixed::operator--(void) {
 	return (*this);
 }
 
+
+
 int	Fixed::getRawBits(void) const{
 	return (this->fixed);
 }
