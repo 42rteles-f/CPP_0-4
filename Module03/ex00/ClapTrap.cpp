@@ -10,33 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iostream>
-#include <functional>
+#include "ClapTrap.hpp"
 
-
-class ClapTrap {
-	private:
-		std::string name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
-
-	public:
-		ClapTrap(std::string name);
-		~ClapTrap();
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-} ;
+ClapTrap::ClapTrap()
+	name("NoName"), hitPoints(10), energyPoints(10), attackDamage(0)
+{ std::out << "ClapTrap Default Constructor Called."; }
 
 ClapTrap::ClapTrap(std::string name):
 	name(name), hitPoints(10), energyPoints(10), attackDamage(0)
-{}
+{ std::out << "ClapTrap Name Constructor Called."; }
 
-ClapTrap::~ClapTrap() {
-	std::cout << this->name << " has been destroyed!" << std::endl;
-}
+ClapTrap::~ClapTrap()
+{ std::cout << this->name << " has been destroyed!" << std::endl; }
 
 void ClapTrap::attack(const std::string& target) {
 	std::cout << this->name << " Attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
