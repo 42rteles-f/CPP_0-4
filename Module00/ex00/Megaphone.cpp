@@ -9,6 +9,7 @@ int	main(int counter, char **input)
 	}
 	for(int index = 1; input[index]; index++)
 	{
+		if (index != 1) std::cout << " ";
 		for (int letter = 0; input[index][letter]; letter++)
 			input[index][letter] = toupper(input[index][letter]);
 		std::cout << input[index];

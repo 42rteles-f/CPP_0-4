@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 21:43:18 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/11/29 14:56:36 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:24:41 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ int	input_check(int counter, char **input, std::ifstream& in, std::ofstream& out
 {
 	std::string		file;
 
-	if (counter != 4 || !input[2] || !input[3])
+	if (counter != 4 || !*(input[1]) || !*(input[2]) || !*(input[3]))
 	{
 		std::cout << "Wrong Usage." << std:: endl;
 		return (0);
 	}
 	file = input[1];
 	file.append(".replace");
-	in.open(input[1]);
-	out.open(file);
-	if (!in.is_open() || !out.is_open())
+	if ((in.open(input[1]), !in.is_open()) || (out.open(file), !out.is_open()))
 	{
 		std::cout << "Failed to Open File." << std::endl;
 		return (0);
@@ -48,7 +46,7 @@ void	write_replace(std::ifstream& in, std::ofstream& out, std::string s1, std::s
 			line.insert(found, s2);
 			found += s2.length();
 		}
-		if (!in.eof()) { line += '\n'; };
+		if (!in.eof()) line += '\n';
 		out.write(line.c_str(), line.length());
 	}
 }
@@ -63,6 +61,6 @@ int	main(int argc, char **argv)
 	write_replace(in, out, argv[2], argv[3]);
 	in.close();
 	out.close();
-	
+
 	return (0);
 }

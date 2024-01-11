@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:29:46 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/05/26 21:00:59 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:57:40 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,6 @@ Fixed	Fixed::operator--(void) {
 	this->fixed--;
 	return (*this);
 }
-
-
 
 int	Fixed::getRawBits(void) const{
 	return (this->fixed);
