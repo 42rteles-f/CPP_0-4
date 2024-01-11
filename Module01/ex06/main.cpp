@@ -1,10 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/10 16:26:42 by rteles-f          #+#    #+#             */
+/*   Updated: 2024/01/10 16:26:42 by rteles-f         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	Harl	test2;
+	Harl	harl;
 
-	test2.complain("IFO");
-	// test2.complain("INFO");
+	if (ac != 2)
+		harl.complain("");
+	else
+		harl.complain(av[1]);
+
 	return (0);
 }
