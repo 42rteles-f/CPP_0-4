@@ -5,32 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 10:16:19 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/05/29 10:19:01 by rteles-f         ###   ########.fr       */
+/*   Created: 2023/05/29 10:12:08 by rteles-f          #+#    #+#             */
+/*   Updated: 2024/01/15 10:52:04 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-# include <iostream>
-# include "ScavTrap.hpp"
 # include "ClapTrap.hpp"
+# include <iostream>
 
-class DiamonTrap: public ClapTrap, public ScavTrap {
+class FragTrap: public ClapTrap {
 	private:
-		std::string name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
+		std::string	name;
 
 	public:
-		DiamonTrap();
-		DiamonTrap(std::string name);
-		~DiamonTrap();
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		FragTrap();
+		FragTrap(const FragTrap &tocopy);
+		FragTrap(std::string name);
+		~FragTrap();
+
+		FragTrap &operator=(const FragTrap &tocopy);
+
+		void highFivesGuys(void);
 } ;
 
 #endif

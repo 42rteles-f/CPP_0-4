@@ -6,11 +6,11 @@
 #    By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 20:08:19 by rteles-f          #+#    #+#              #
-#    Updated: 2024/01/15 06:44:32 by rteles-f         ###   ########.fr        #
+#    Updated: 2024/01/15 07:27:14 by rteles-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 	bsp
+NAME		= 	clapbattle
 
 CC			= 	c++ #-g -fsanitize=address
 
@@ -20,7 +20,7 @@ RM			= 	rm -f
 
 INCLUDES	= 	-I
 
-SRCS		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRCS		=	main.cpp ClapTrap.cpp
 
 OBJS		= 	$(SRCS:.cpp=.o)
 

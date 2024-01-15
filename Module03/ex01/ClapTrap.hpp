@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 21:35:27 by rteles-f          #+#    #+#             */
-/*   Updated: 2023/05/29 10:18:00 by rteles-f         ###   ########.fr       */
+/*   Created: 2024/01/15 08:02:40 by rteles-f          #+#    #+#             */
+/*   Updated: 2024/01/15 08:02:40 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <iostream>
+# include <iostream>
+# include <functional>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string name;
 		int			hitPoints;
 		int			energyPoints;
@@ -24,8 +25,12 @@ class ClapTrap {
 
 	public:
 		ClapTrap();
+		ClapTrap(const ClapTrap &tocopy);
 		ClapTrap(std::string name);
 		~ClapTrap();
+
+		ClapTrap &operator=(const ClapTrap &tocopy);
+
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
