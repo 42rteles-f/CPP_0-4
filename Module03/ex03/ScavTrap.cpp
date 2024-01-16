@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 21:33:10 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/16 14:32:07 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:42:29 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ ClapTrap(name), gateMode(0)
 	std::cout << name << " ScavTrap String Constructor Called." << std::endl;	
 }
 
-ScavTrap::ScavTrap(const ScavTrap &tocopy): ClapTrap(tocopy) {
+ScavTrap::ScavTrap(const ScavTrap &tocopy):
+ClapTrap(tocopy)
+{
 	std::cout << "ScavTrap Copy Constructor called." << std::endl;
 	*this = tocopy;
 }

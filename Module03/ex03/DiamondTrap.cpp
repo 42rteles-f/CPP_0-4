@@ -1,54 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 21:33:10 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 10:47:39 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 15:37:05 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-FragTrap::FragTrap():
+DiamondTrap::DiamondTrap():
 name("NoName")
 {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
-	std::cout << name << " FragTrap Default Constructor Called." << std::endl;
+	std::cout << "DiamondTrap Default Constructor called." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &tocopy) {
-	std::cout << "FragTrap Copy Constructor called." << std::endl;
+DiamondTrap::DiamondTrap(std::string name):
+ClapTrap(name + "_clap_name"), name(name)
+{
+	std::cout << name << " DiamondTrap String Constructor Called." << std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &tocopy):
+ClapTrap(tocopy), ScavTrap(), FragTrap()
+{
+	std::cout << "DiamondTrap Copy Constructor called." << std::endl;
 	*this = tocopy;
 }
 
-FragTrap::FragTrap(std::string name):
-name(name), ClapTrap(name)
-{
-	ClapTrap::name = name;
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
-	std::cout << name << " FragTrap String Constructor Called." << std::endl;
-}
+DiamondTrap::~DiamondTrap()
+{ std::cout << "DiamondTrap " << this->name << " has been destroyed!" << std::endl; }
 
-FragTrap::~FragTrap()
-{ std::cout << "FragTrap " << this->name << " has been destroyed!" << std::endl; }
-
-FragTrap& FragTrap::operator=(const FragTrap &tocopy) {
-	std::cout << "FragTrap Assign operator called." << std::endl;
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap &tocopy) {
+	std::cout << "DiamondTrap Assign operator called." << std::endl;
 	if (this == &tocopy)
 		return (*this);
 	this->name = tocopy.name;
-	ClapTrap::operator=(tocopy);
+	ScavTrap::operator=(tocopy);
+	FragTrap::operator=(tocopy);
 
 	return (*this);
 }
 
-void	FragTrap::highFivesGuys(void) {
-	std::cout << this->name << " is requesting a High Five." << std::endl;
+void	DiamondTrap::whoAmI(void) {
+	std::cout << "Hello, I am a DiamondTrap Class named: " << this->name <<
+				 ". I'm also part ClapTrap named: " << ClapTrap::name << std::endl;
 }
+

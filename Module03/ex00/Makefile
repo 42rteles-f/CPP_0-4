@@ -6,7 +6,7 @@
 #    By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 20:08:19 by rteles-f          #+#    #+#              #
-#    Updated: 2024/01/15 07:27:14 by rteles-f         ###   ########.fr        #
+#    Updated: 2024/01/16 12:24:28 by rteles-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ all: 		$(NAME)
 
 $(NAME):	$(OBJS) 
 			@$(CC) $(INCLUDES) $(CFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+			$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 			@$(RM) $(OBJS)
