@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:44:18 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/16 20:56:16 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:57:39 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ int main()
 	// j->makeSound();
 	// meta->makeSound();
 
-	const WrongAnimal* meta = new WrongAnimal();
 	const WrongAnimal* wrongptr = new WrongCat();
 	const WrongCat *catptr = (WrongCat *)wrongptr;
 	std::cout << wrongptr->getType() << " " << std::endl;
-	meta->makeSound();
 	wrongptr->makeSound(); //will output the WrongAnimal sound!
 	catptr->makeSound();
 

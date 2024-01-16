@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:25:38 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:37:14 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:12:39 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ thoughts(new Brain)
 }
 
 Cat::Cat(const Cat& tocopy):
-Animal()
+Animal(), thoughts(new Brain)
 {
     std::cout << "Cat Copy Constructor called." << std::endl;
 	*this = tocopy;
@@ -38,7 +38,7 @@ Cat& Cat::operator=(const Cat& tocopy) {
 
 	if (!thoughts)
 		thoughts = new Brain;
-	this->thoughts = tocopy.thoughts;
+	*(this->thoughts) = *(tocopy.thoughts);
 
     return (*this);
 }

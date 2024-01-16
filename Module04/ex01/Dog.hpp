@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:26:25 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:28:03 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:40:22 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Dog: public Animal {
         Dog();
         Dog(const Dog& tocopy);
         ~Dog();
+        
 
         Dog& operator=(const Dog& tocopy);
 

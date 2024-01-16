@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:21:03 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:36:50 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:39:04 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ Animal::Animal():
 type("Animal")
 { std::cout << "Animal Default Constructor called." << std::endl; }
 
-Animal::Animal(const Animal& tocopy):
-type("Animal")
+Animal::Animal(const Animal& tocopy)
 {
     std::cout << "Animal Copy Constructor called." << std::endl;
     *this = tocopy;
