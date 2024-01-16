@@ -12,7 +12,8 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog():
+thoughts(new Brain)
 {
 	this->type = "Dog";
 	std::cout << "Dog Default Constructor called." << std::endl;
@@ -22,16 +23,22 @@ Dog::Dog(const Dog& tocopy):
 Animal()
 {
     std::cout << "Dog Copy Constructor called." << std::endl;
-    this->type = "Dog";
 	*this = tocopy;
 }
 
 Dog::~Dog()
-{ std::cout << "Dog Destructor called." << std::endl; }
+{
+	if (thoughts) delete thoughts;
+	std::cout << "Dog Destructor called." << std::endl;
+}
 
 Dog& Dog::operator=(const Dog& tocopy) {
 	if (this != &tocopy)
 		this->type = tocopy.type;
+
+	if (!thoughts)
+		thoughts = new Brain;
+	this->thoughts = tocopy.thoughts;
 
     return (*this);
 }

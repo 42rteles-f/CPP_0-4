@@ -16,18 +16,18 @@
 # include <iostream>
 
 class Animal {
-    private:
+    protected:
         std::string type;
 
     public:
         Animal();
         Animal(const Animal& tocopy);
-        // Animal();
         ~Animal();
 
         Animal& operator=(const Animal& tocopy);
 
-        virtual void    makeSound() const;
-}
+        virtual void		makeSound(void) const;
+		const std::string	getType(void) const;
+} ;
 
 #endif

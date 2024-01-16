@@ -15,8 +15,12 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat: public Animal {
+	private:
+		Brain	*thoughts;
+
     public:
         Cat();
         Cat(const Cat& tocopy);

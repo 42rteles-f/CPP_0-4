@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-    this->type = "Cat";
-	std::cout << "Cat Default Constructor called." << std::endl;
+    this->type = "WrongCat";
+	std::cout << "WrongCat Default Constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& tocopy):
-Animal()
+WrongCat::WrongCat(const WrongCat& tocopy):
+WrongAnimal()
 {
-    std::cout << "Cat Copy Constructor called." << std::endl;
-    this->type = "Cat";
+    std::cout << "WrongCat Copy Constructor called." << std::endl;
+    this->type = "WrongCat";
 	*this = tocopy;
 }
 
-Cat::~Cat()
-{ std::cout << "Cat Destructor called." << std::endl; }
+WrongCat::~WrongCat()
+{ std::cout << "WrongCat Destructor called." << std::endl; }
 
-Cat& Cat::operator=(const Cat& tocopy) {
+WrongCat& WrongCat::operator=(const WrongCat& tocopy) {
 	if (this != &tocopy)
 		this->type = tocopy.type;
 
     return (*this);
 }
 
-void	Cat::makeSound(void) const {
-    std::cout << "Meowwwwww." << std::endl;
+void	WrongCat::makeSound(void) const {
+    std::cout << "Wmrrrrrr." << std::endl;
 }

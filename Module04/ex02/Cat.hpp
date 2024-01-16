@@ -14,9 +14,13 @@
 # define CAT_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Cat: public Animal {
+class Cat: public AAnimal {
+	private:
+		Brain	*thoughts;
+
     public:
         Cat();
         Cat(const Cat& tocopy);

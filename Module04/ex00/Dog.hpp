@@ -18,18 +18,14 @@
 # include "Animal.hpp"
 
 class Dog: public Animal {
-    private:
-        std::string type;
-
     public:
         Dog();
         Dog(const Dog& tocopy);
-        // Dog();
         ~Dog();
 
         Dog& operator=(const Dog& tocopy);
 
-        void    makeSound() const;
-}
+        void    makeSound(void) const;
+} ;
 
 #endif

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 11:25:11 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:28:17 by rteles-f         ###   ########.fr       */
+/*   Created: 2024/01/15 11:21:31 by rteles-f          #+#    #+#             */
+/*   Updated: 2024/01/15 11:34:57 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
-# include "Animal.hpp"
 
-class Cat: public Animal {
-    public:
-        Cat();
-        Cat(const Cat& tocopy);
-        ~Cat();
+class AAnimal {
+	protected:
+		std::string type;
 
-        Cat& operator=(const Cat& tocopy);
+	public:
+		AAnimal();
+		AAnimal(const AAnimal& tocopy);
+		virtual ~AAnimal();
 
-        void    makeSound(void) const;
+		AAnimal& operator=(const AAnimal& tocopy);
+
+		virtual void		makeSound(void) const = 0;
+		const std::string	getType(void) const;
 } ;
 
 #endif

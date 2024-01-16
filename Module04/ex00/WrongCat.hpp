@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat: public Animal {
+class WrongCat: public WrongAnimal {
     public:
-        Cat();
-        Cat(const Cat& tocopy);
-        ~Cat();
+        WrongCat();
+        WrongCat(const WrongCat& tocopy);
+        ~WrongCat();
 
-        Cat& operator=(const Cat& tocopy);
+        WrongCat& operator=(const WrongCat& tocopy);
 
         void    makeSound(void) const;
 } ;

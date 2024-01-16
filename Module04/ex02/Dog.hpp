@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 11:25:11 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:28:17 by rteles-f         ###   ########.fr       */
+/*   Created: 2024/01/15 11:26:25 by rteles-f          #+#    #+#             */
+/*   Updated: 2024/01/15 11:28:03 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Cat: public Animal {
+class Dog: public AAnimal {
+	private:
+		Brain	*thoughts;
+
     public:
-        Cat();
-        Cat(const Cat& tocopy);
-        ~Cat();
+        Dog();
+        Dog(const Dog& tocopy);
+        ~Dog();
 
-        Cat& operator=(const Cat& tocopy);
+        Dog& operator=(const Dog& tocopy);
 
         void    makeSound(void) const;
 } ;

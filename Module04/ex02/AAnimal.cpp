@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 11:26:27 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:37:28 by rteles-f         ###   ########.fr       */
+/*   Created: 2024/01/15 11:21:03 by rteles-f          #+#    #+#             */
+/*   Updated: 2024/01/15 11:36:50 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "AAnimal.hpp"
 
-Dog::Dog()
+AAnimal::AAnimal():
+type("AAnimal")
+{ std::cout << "AAnimal Default Constructor called." << std::endl; }
+
+AAnimal::AAnimal(const AAnimal& tocopy):
+type("AAnimal")
 {
-	this->type = "Dog";
-	std::cout << "Dog Default Constructor called." << std::endl;
+    std::cout << "AAnimal Copy Constructor called." << std::endl;
+    *this = tocopy;
 }
 
-Dog::Dog(const Dog& tocopy):
-Animal()
-{
-    std::cout << "Dog Copy Constructor called." << std::endl;
-    this->type = "Dog";
-	*this = tocopy;
-}
+AAnimal::~AAnimal()
+{ std::cout << "AAnimal Destructor called." << std::endl; }
 
-Dog::~Dog()
-{ std::cout << "Dog Destructor called." << std::endl; }
-
-Dog& Dog::operator=(const Dog& tocopy) {
+AAnimal& AAnimal::operator=(const AAnimal& tocopy) {
 	if (this != &tocopy)
 		this->type = tocopy.type;
 
     return (*this);
 }
 
-void    Dog::makeSound(void) const {
-    std::cout << "Auuuuuuuuuuuuuuu." << std::endl;
+const std::string	AAnimal::getType(void) const {
+	return (this->type);
 }

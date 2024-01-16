@@ -12,26 +12,33 @@
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat():
+thoughts(new Brain)
 {
     this->type = "Cat";
 	std::cout << "Cat Default Constructor called." << std::endl;
 }
 
 Cat::Cat(const Cat& tocopy):
-Animal()
+AAnimal()
 {
     std::cout << "Cat Copy Constructor called." << std::endl;
-    this->type = "Cat";
 	*this = tocopy;
 }
 
 Cat::~Cat()
-{ std::cout << "Cat Destructor called." << std::endl; }
+{
+	if (thoughts) delete thoughts;
+	std::cout << "Cat Destructor called." << std::endl;
+}
 
 Cat& Cat::operator=(const Cat& tocopy) {
 	if (this != &tocopy)
 		this->type = tocopy.type;
+
+	if (!thoughts)
+		thoughts = new Brain;
+	this->thoughts = tocopy.thoughts;
 
     return (*this);
 }
