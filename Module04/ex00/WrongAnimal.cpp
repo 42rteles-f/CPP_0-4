@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:21:03 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:36:50 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:55:53 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ WrongAnimal::WrongAnimal():
 type("WrongAnimal")
 { std::cout << "WrongAnimal Default Constructor called." << std::endl; }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& tocopy):
-type("WrongAnimal")
+WrongAnimal::WrongAnimal(const WrongAnimal& tocopy)
 {
     std::cout << "WrongAnimal Copy Constructor called." << std::endl;
     *this = tocopy;

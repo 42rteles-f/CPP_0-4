@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:26:27 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/15 11:37:28 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:55:17 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Dog::Dog(const Dog& tocopy):
 Animal()
 {
     std::cout << "Dog Copy Constructor called." << std::endl;
-    this->type = "Dog";
 	*this = tocopy;
 }
 
