@@ -6,7 +6,7 @@
 /*   By: rteles-f <rteles-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:44:18 by rteles-f          #+#    #+#             */
-/*   Updated: 2024/01/16 21:14:40 by rteles-f         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:21:51 by rteles-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ int main()
 	{
 	Cat *a = new Cat;
 	Cat b;
+	Cat c;
 	b = *a;
 	delete a;
-	}
-	Dog basic;
-	{
-	Dog tmp = basic;
+	c = b;
 	}
 	
 
